@@ -46,11 +46,32 @@ h2{margin:48px 0 16px;font-size:26px;font-weight:600;color:var(--ink)}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video.empty{display:grid;place-items:center;color:var(--muted);text-align:center;padding:12px;border:1px dashed var(--muted);background:transparent}
 .back{margin:0 0 16px}
+.back .btn{width:40px;height:40px;padding:0;display:grid;place-items:center;border-radius:50%;background:var(--bg)}
+.back .btn:hover{background:var(--line)}
+@media (min-width:960px){#page-blog,#page-post{position:relative}.back{position:absolute;top:-39px;left:calc(-1 * min(209px, (100vw - 772px) / 2 - 20px));margin:0}}
+#posts .item{position:relative}
+#posts .title::after{content:"";position:absolute;inset:0}
+#posts .item:hover .title{color:var(--link)}
+#posts .item:hover{background:rgba(127,127,127,.06)}
+#post h1{font-size:34px;margin:0 0 4px}
+#post .meta{margin:0 0 20px}
+#post p{margin:0 0 14px;max-width:64ch}
+#post .video{margin:20px 0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .btn{display:inline-block;padding:6px 18px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-weight:600;font-size:16px}
 .btn:hover{text-decoration:none;background:var(--line)}
 #page-blog .item{padding:24px 0}
 #page-blog .tile{height:110px}
+.exp-btn{font:inherit;font-weight:700;font-size:18px;line-height:1.3;color:var(--ink);background:none;border:0;padding:0;text-align:left;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.chev{position:absolute;right:4px;top:22px;flex:none;color:var(--muted);opacity:0;transition:opacity .15s,transform .2s}
+.small .chev{top:18px}
+.item.exp .body{padding-right:36px}
+.item.exp{cursor:pointer;position:relative}
+.item.exp:hover .chev,.exp-btn:focus-visible .chev,.item.open .chev{opacity:1}
+.item.open .chev{transform:rotate(180deg)}
+@media (hover:none){.chev{opacity:1}}
+.note{margin-top:10px;max-width:62ch}
+.note p{margin:0}
 .small .tile{height:64px;flex-basis:150px;font-size:20px}
 .small .item{padding:12px 0}
 [hidden]{display:none!important}
@@ -80,15 +101,15 @@ h2{margin:48px 0 16px;font-size:26px;font-weight:600;color:var(--ink)}
 </header>
 
 <section id="work" aria-labelledby="hw">
-  <h2 id="hw">Work</h2>
+  <h2 id="hw">Work Experience</h2>
   <div class="item"><div class="tile t1" aria-hidden="true">BT</div><div class="body">
-    <span class="title">DevOps Engineer</span><p class="sub">Brucode Technologies</p><p class="meta">Feb 2026 – Present</p></div></div>
+    <span class="title">DevOps Engineer</span><p class="sub">Brucode Technologies</p><p class="meta">Feb 2026 – Present</p><div class="note" hidden><p>Write two to four lines about this role here: what you worked on, the tools you used and what you achieved.</p></div></div></div>
   <div class="item"><div class="tile t3" aria-hidden="true">DT</div><div class="body">
-    <span class="title">DevOps Engineer</span><p class="sub">Ditinus Technologies</p><p class="meta">Jul 2025 – Nov 2025</p></div></div>
+    <span class="title">DevOps Engineer</span><p class="sub">Ditinus Technologies</p><p class="meta">Jul 2025 – Nov 2025</p><div class="note" hidden><p>Write two to four lines about this role here: what you worked on, the tools you used and what you achieved.</p></div></div></div>
   <div class="item"><div class="tile t3" aria-hidden="true">DT</div><div class="body">
-    <span class="title">DevOps Intern</span><p class="sub">Ditinus Technologies</p><p class="meta">Feb 2025 – Jul 2025</p></div></div>
+    <span class="title">DevOps Intern</span><p class="sub">Ditinus Technologies</p><p class="meta">Feb 2025 – Jul 2025</p><div class="note" hidden><p>Write two to four lines about this role here: what you worked on, the tools you used and what you achieved.</p></div></div></div>
   <div class="item"><div class="tile t2" aria-hidden="true">SI</div><div class="body">
-    <span class="title">Apprentice</span><p class="sub">SYSINFOCOM Private Limited</p><p class="meta">2023 – 2024</p></div></div>
+    <span class="title">Apprentice</span><p class="sub">SYSINFOCOM Private Limited</p><p class="meta">2023 – 2024</p><div class="note" hidden><p>Write two to four lines about this role here: what you worked on, the tools you used and what you achieved.</p></div></div></div>
 </section>
 
 <section class="small" aria-labelledby="hc">
@@ -96,18 +117,22 @@ h2{margin:48px 0 16px;font-size:26px;font-weight:600;color:var(--ink)}
   <div class="item"><div class="tile t1" aria-hidden="true">RH</div><div class="body">
     <span class="title">Linux System Administration</span><p class="sub">Red Hat, Inc.</p>
     <p class="meta">2024 · Credential ID 240-105-973</p>
-    <p class="acts"><a href="https://www.credly.com/go/B8INA1QJ" target="_blank" rel="noopener">Verify on Credly</a></p></div></div>
+    <p class="acts"><a href="https://www.credly.com/go/B8INA1QJ" target="_blank" rel="noopener">Verify on Credly</a></p><div class="note" hidden><p>Write a couple of lines here about what this certification covers and what you learned from it.</p></div></div></div>
   <div class="item"><div class="tile t2" aria-hidden="true">LU</div><div class="body">
-    <span class="title">B.Sc, Physics, Chemistry &amp; Mathematics</span><p class="sub">University of Lucknow</p><p class="meta">2022 – 2025</p></div></div>
+    <span class="title">B.Sc, Physics, Chemistry &amp; Mathematics</span><p class="sub">University of Lucknow</p><p class="meta">2022 – 2025</p><div class="note" hidden><p>Write a couple of lines here about your studies, favourite subjects or projects.</p></div></div></div>
 </section>
 </div>
 
 <div id="page-blog" hidden>
-<p class="back"><a class="btn" href="#">Back</a></p>
+<p class="back"><a class="btn" href="#" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a></p>
 <section aria-labelledby="hbp">
   <h1 id="hbp" class="sr">Blog</h1>
   <div id="posts"></div>
 </section>
+</div>
+<div id="page-post" hidden>
+<p class="back"><a class="btn" href="#blog" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a></p>
+<article id="post"></article>
 </div>
 </div>
 
@@ -115,14 +140,14 @@ h2{margin:48px 0 16px;font-size:26px;font-weight:600;color:var(--ink)}
 /* ---- Add blog posts here, newest first ----
    tag: short label shown on the tile (e.g. "Linux")
    video: YouTube link, "" for none, null shows a sample box
-   body: array of paragraphs shown when the reader clicks "Read" */
+   body: array of paragraphs shown on the post page */
 var POSTS=[
   {title:"Your first blog post",date:"9 Nov 2026",tag:"Post",
    summary:"One or two sentences that tell the reader what this post covers and why it matters.",
-   body:["Write the full post here. Add as many paragraphs as you like.","Posts with a video show a Watch link next to Read."],
+   body:["Write the full post here. Add as many paragraphs as you like.","If a post has a YouTube link, the video appears below the text."],
    video:null},
   {title:"A second post",date:"1 Nov 2026",tag:"Notes",
-   summary:"A post with no video only shows the Read link.",
+   summary:"A post without a video shows only the text.",
    body:["The full text of the second post goes here."],
    video:""}
 ];
@@ -134,51 +159,59 @@ function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null
   var box=document.getElementById('posts'),tones=['t1','t2','t3'];
   POSTS.forEach(function(p,i){
     var it=el('div','item'),tile=el('div','tile '+tones[i%3],p.tag||'Post');tile.setAttribute('aria-hidden','true');
-    var b=el('div','body');
-    b.appendChild(el('span','title',p.title));
+    var b=el('div','body'),a=el('a','title',p.title);a.href='#post-'+(i+1);
+    b.appendChild(a);
     b.appendChild(el('p','meta',p.date));
     b.appendChild(el('p','desc',p.summary));
-    var acts=el('p','acts'),more=el('div','more'),vid=null;
-    more.hidden=true;
-    p.body.forEach(function(t){more.appendChild(el('p',null,t))});
-    var rb=el('button',null,'Read');rb.type='button';rb.setAttribute('aria-expanded','false');
-    rb.onclick=function(){more.hidden=!more.hidden;rb.setAttribute('aria-expanded',String(!more.hidden));rb.textContent=more.hidden?'Read':'Hide'};
-    acts.appendChild(rb);
-    if(p.video===null){
-      vid=el('div','video empty','Your YouTube video appears here');vid.hidden=true;
-    }else if(p.video){
-      var id=ytId(p.video);
-      if(id){
-        vid=el('div','video');vid.hidden=true;vid.dataset.id=id;
-        var yl=el('a',null,'YouTube');yl.href='https://www.youtube.com/watch?v='+id;yl.target='_blank';yl.rel='noopener';
-      }
-    }
-    if(vid){
-      var wb=el('button',null,'Watch');wb.type='button';wb.setAttribute('aria-expanded','false');
-      wb.onclick=function(){
-        if(vid.hidden&&vid.dataset.id&&!vid.firstChild){
-          var f=document.createElement('iframe');
-          f.src='https://www.youtube-nocookie.com/embed/'+vid.dataset.id;
-          f.title=p.title+' (video)';f.allowFullscreen=true;
-          f.setAttribute('allow','accelerometer; encrypted-media; gyroscope; picture-in-picture');
-          vid.appendChild(f);
-        }
-        vid.hidden=!vid.hidden;wb.setAttribute('aria-expanded',String(!vid.hidden));wb.textContent=vid.hidden?'Watch':'Hide video';
-      };
-      acts.appendChild(wb);
-      if(typeof yl!=='undefined'&&yl&&p.video){acts.appendChild(yl);yl=null}
-    }
-    b.appendChild(acts);b.appendChild(more);if(vid)b.appendChild(vid);
     it.appendChild(tile);it.appendChild(b);box.appendChild(it);
   });
-  var home=document.getElementById('page-home'),bp=document.getElementById('page-blog');
+
+  function renderPost(i){
+    var p=POSTS[i],box=document.getElementById('post');
+    box.textContent='';
+    if(!p){box.appendChild(el('p',null,'This post could not be found.'));return}
+    box.appendChild(el('h1',null,p.title));
+    box.appendChild(el('p','meta',p.date));
+    p.body.forEach(function(t){box.appendChild(el('p',null,t))});
+    if(p.video===null){box.appendChild(el('div','video empty','Your YouTube video appears here'))}
+    else if(p.video){
+      var id=ytId(p.video);
+      if(id){
+        var v=el('div','video'),f=document.createElement('iframe');
+        f.src='https://www.youtube-nocookie.com/embed/'+id;
+        f.title=p.title+' (video)';f.allowFullscreen=true;
+        f.setAttribute('allow','accelerometer; encrypted-media; gyroscope; picture-in-picture');
+        v.appendChild(f);box.appendChild(v);
+        var l=el('a',null,'Watch on YouTube');l.href='https://www.youtube.com/watch?v='+id;l.target='_blank';l.rel='noopener';
+        var pl=el('p');pl.appendChild(l);box.appendChild(pl);
+      }
+    }
+  }
+
+  var pages={home:document.getElementById('page-home'),blog:document.getElementById('page-blog'),post:document.getElementById('page-post')};
   function route(){
-    var b=location.hash==='#blog';
-    home.hidden=b;bp.hidden=!b;
-    document.title=(b?'Blog – ':'')+'Aryaman Maurya';
-    window.scrollTo(0,0);
+    var h=location.hash.slice(1),m=h.match(/^post-(\d+)$/),name='home',title='Aryaman Maurya';
+    if(m){name='post';renderPost(+m[1]-1);var p=POSTS[+m[1]-1];if(p)title=p.title+' – Aryaman Maurya'}
+    else if(h==='blog'){name='blog';title='Blog – Aryaman Maurya'}
+    for(var k in pages)pages[k].hidden=(k!==name);
+    document.title=title;window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',route);route();
+})();
+
+(function(){
+  document.querySelectorAll('#page-home .item').forEach(function(it,i){
+    var note=it.querySelector('.note'),t=it.querySelector('.title');
+    if(!note||!t)return;
+    var b=document.createElement('button');b.type='button';b.className='title exp-btn';
+    b.setAttribute('aria-expanded','false');
+    note.id='note-'+i;b.setAttribute('aria-controls',note.id);
+    b.appendChild(document.createTextNode(t.textContent));
+    b.insertAdjacentHTML('beforeend','<svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>');
+    t.replaceWith(b);it.classList.add('exp');
+    function toggle(){var o=note.hidden;note.hidden=!o;it.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o))}
+    it.addEventListener('click',function(e){if(e.target.closest('a'))return;if(e.target===b||b.contains(e.target)){toggle();return}toggle()});
+  });
 })();
 </script>
 </body>
