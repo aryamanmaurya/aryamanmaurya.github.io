@@ -1,0 +1,109 @@
+:root{--bg:#fff;--ink:#1a1a1a;--text:#333;--muted:#666;--line:#e6e6e6;--link:#1772d0;--tile1:#e3f1ef;--tile1i:#0f766e;--tile2:#fdeedd;--tile2i:#b45309;--tile3:#e8ecf6;--tile3i:#3a4a8a;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121416;--ink:#f1f1f1;--text:#cfcfcf;--muted:#9a9a9a;--line:#2a2d30;--link:#6cb0ff;--tile1:#173431;--tile1i:#5eead4;--tile2:#3a2a15;--tile2i:#fbbf6a;--tile3:#1f2640;--tile3i:#a5b4f5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121416;--ink:#f1f1f1;--text:#cfcfcf;--muted:#9a9a9a;--line:#2a2d30;--link:#6cb0ff;--tile1:#173431;--tile1i:#5eead4;--tile2:#3a2a15;--tile2i:#fbbf6a;--tile3:#1f2640;--tile3i:#a5b4f5;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:3px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- page frame ---------- */
+.page{max-width:1200px;margin:0 auto;padding:56px 32px 80px}
+
+/* ---------- two-column home layout ---------- */
+.layout{display:grid;grid-template-columns:minmax(280px,440px) minmax(0,1fr);column-gap:64px;align-items:start}
+.side{position:sticky;top:56px}
+/* blog pages: Home button sits in the left margin, content starts at the left edge */
+.layout.sub{display:block;position:relative}
+.layout.tight .side h1{margin:0}
+.layout.tight .cards{margin-top:0}
+.layout.sub .side{position:static}
+.layout.sub .back{margin:0 0 28px}
+@media (min-width:1440px){.layout.sub .back{position:absolute;top:0;right:100%;margin:0 24px 0 0;white-space:nowrap}}
+.photo{display:block;width:160px;height:160px;border-radius:50%;object-fit:cover;background:var(--line);margin:0 0 24px}
+h1{margin:0 0 12px;font-size:36px;line-height:1.15;font-weight:700;color:var(--ink)}
+h2{margin:0 0 8px;font-size:26px;line-height:1.2;font-weight:600;color:var(--ink)}
+.side p{margin:0 0 12px}
+.links{margin:20px 0 0!important;font-size:16px}
+.links a+a::before{content:"/";color:var(--muted);margin:0 8px;display:inline-block}
+.side .btn{margin-top:8px}
+.side .back .btn{margin-top:0}
+.main section+section{margin-top:48px}
+
+/* ---------- list items (experience, certs, blog tiles) ---------- */
+.item{display:flex;gap:24px;padding:16px 0;border-top:1px solid var(--line);position:relative}
+.item:first-of-type{border-top:0}
+.tile{flex:0 0 140px;height:92px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:26px;letter-spacing:.02em}
+.t1{background:var(--tile1);color:var(--tile1i)}
+.t2{background:var(--tile2);color:var(--tile2i)}
+.t3{background:var(--tile3);color:var(--tile3i)}
+.body{flex:1;min-width:0}
+.title{display:block;font-weight:700;font-size:18px;color:var(--ink);line-height:1.3}
+.sub{margin:2px 0 0;color:var(--text)}
+.meta{margin:0;font-style:italic;color:var(--muted)}
+.desc{margin:8px 0 0}
+.acts{margin:8px 0 0;font-size:16px}
+.small .tile{height:64px;font-size:20px}
+.small .item{padding:12px 0}
+
+/* expandable notes */
+.exp-btn{font:inherit;font-weight:700;font-size:18px;line-height:1.3;color:var(--ink);background:none;border:0;padding:0;text-align:left;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.chev{position:absolute;right:4px;top:22px;flex:none;color:var(--muted);opacity:0;transition:opacity .15s,transform .2s}
+.small .chev{top:18px}
+.item.exp .body{padding-right:36px}
+.item.exp{cursor:pointer}
+.item.exp:hover .chev,.exp-btn:focus-visible .chev,.item.open .chev{opacity:1}
+.item.open .chev{transform:rotate(180deg)}
+@media (hover:none){.chev{opacity:1}}
+.note{margin-top:10px;max-width:62ch}
+.note p{margin:0}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;padding:6px 18px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-weight:600;font-size:16px}
+.btn:hover{text-decoration:none;background:var(--line)}
+
+/* ---------- blog list on the home page ---------- */
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:24px;max-width:860px}
+.card{display:flex;gap:20px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:10px;position:relative}
+.card:hover{background:rgba(127,127,127,.06)}
+.card .tile{flex:0 0 110px;height:80px;font-size:22px}
+.card .title::after{content:"";position:absolute;inset:0}
+.card:hover .title{color:var(--link)}
+.card .desc{margin:6px 0 0;font-size:16px}
+
+/* ---------- blog post page ---------- */
+.back{margin:0 0 32px}
+.post h1{font-size:34px;margin:0 0 4px}
+.post .meta{margin:0 0 24px}
+.post p{margin:0 0 14px;max-width:72ch}
+.video{position:relative;aspect-ratio:16/9;max-width:760px;margin:24px 0;border-radius:8px;overflow:hidden;background:var(--line)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video.empty{display:grid;place-items:center;color:var(--muted);text-align:center;padding:12px;border:1px dashed var(--muted);background:transparent}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+ .page{padding:40px 24px 64px}
+ .layout{grid-template-columns:minmax(0,1fr);row-gap:48px}
+ .side{position:static}
+ .layout.tight{row-gap:16px}
+ .cards{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+ .item{flex-direction:column;gap:10px}
+ .tile{flex-basis:auto;width:100%;max-width:220px}
+ .small .tile{height:56px}
+ .card{flex-direction:column;align-items:flex-start;gap:12px}
+ .card .tile{flex-basis:auto;width:100%;max-width:220px}
+}
+
+/* blog list: heading alone on its own line, cards on the lines after it */
+@media (min-width:1001px){
+ .layout.tight{display:block}
+ .layout.tight .side h1{margin:0 0 28px;line-height:1.15}
+ .layout.tight .cards{margin:0 0 0 128px;max-width:860px}
+}
